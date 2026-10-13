@@ -21,19 +21,18 @@ import numpy as np
 import pandas as pd
 
 # Paper-established constraints supplied for this replication exercise.
-N_WORKERS = 2_044
-N_TRAINED = 1_656
+N_WORKERS = 2044
+N_TRAINED = 1656
 N_UNTRAINED = 388
 START_MONTH = pd.Period("2018-01", freq="M")
 END_MONTH = pd.Period("2020-12", freq="M")
 
 # SIMULATION ASSUMPTIONS (not empirically identified by the supplied counts).
-FACTORY_IDS = ("F01", "F02", "F03")
-CELLS_PER_FACTORY = 20  # One synthetic supervisor per synthetic cell.
+FACTORY_IDS = ("F01", "F02")
+N_SUPERVISORS = 345  # One synthetic supervisor per synthetic cell.
 PROB_DL2 = 0.50
-TRAINING_COHORTS = tuple(pd.Period(m, freq="M") for m in (
-    "2019-01", "2019-07", "2020-01", "2020-07"
-))
+TRAINING_COHORTS = tuple(pd.period_range("2018-07", "2019-06", freq="M"))
+
 PROB_NO_EXIT_BY_2020_12 = 0.65
 
 
